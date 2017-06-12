@@ -1,0 +1,64 @@
+﻿List Of Tasks
+
+SECTION 01 Introduction
+
+SECTION 2
+	1. Create solution with all projects - OK
+
+SECTION 03 Implementing All The Layers
+	2. Create BOL with Entity Framework 
+		* BOL (BusinessObjectLayer) = Handles object operations (repository)
+		* BLL (BusinessLogicLayer) = Handles business operations (validations)
+		* DAL (DataAccessLayer) = Handles communication between database(s)
+		* WebUI (Web User Interface) = Handles web user interactions
+	
+		a. WebUI => BLL, BOL
+		b. BLL => BOL, DAL
+		c. DAL => BOL
+	3. Add Connection String to WebUI 
+	4. Create Areas in MVC 
+		a. Common
+		b. User
+		c. Admin
+		d. Security
+	5. Create All Controllers in Respective Areas 
+	6. Add Default Index View 
+	7. Add Bootstrap 
+	8. Create BrowseUrl View 
+	9. Create Common Layout 
+
+SECTION 04 Implementing User And Admin Module
+	10. Create DAL 
+		a. Add UrlDb 
+	11. Create BLL 
+		a. Add UrlBs 
+	12. Update BrowseUrl Controllers 
+	13. Update BrowseUrl View 
+	14. Sorting 
+	15. Paging 
+	16. ListCategory, ListUser with Sorting and Paging 
+
+SECTION 05 Architectural Enhancements And Validations
+	17. CreateCategory & Create SubmitUrl Controllers 
+	18. Form Validation in BOL for CreateCategory 
+	19. Form Validation in BOL for SubmitUrl (tbl_UrlMetaData) 
+	20. Custom Validation in BOL for SubmitUrl 
+	21. Adding Scripts for Client Side Validation 
+	22. Adding Base Classes 
+	22. ApproveUrls and User Registration 
+
+SECTION 06 Securing Asp.Net MVC Web App
+	23. Authentication Filter in Global File 
+	24. Authentication Project 
+	25. Creating Custom Membership Providers 
+		BLL: need to add references for System.Configuration and System.Web.ApplicationServices
+	26. Create Custom Role Providers 
+
+SECTION 07 Applying Bootstrap Theme 
+	27. Applying Bootstrap Theme 
+
+SECTION 08 Implementing Transactions
+SECTION 09 Ajaxifying An MVC App
+SECTION 10 External Login
+SECTION 11 The Final Push
+SECTION 12 Reports In Asp.Net MVC On Demand
