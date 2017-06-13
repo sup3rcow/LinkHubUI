@@ -9,35 +9,36 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UrlTitle)
+            @Html.ActionLink("UrlTitle", "Index", new { SortOrder = ViewBag.SortOrder==null?"Asc":(ViewBag.SortOrder=="Asc"?"Desc":"Asc"), SortBy = "Title"})
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Url)
+            @Html.ActionLink("Url", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "Url" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UrlDesc)
+            @Html.ActionLink("UrlDesc", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "UrlDesc" })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
+            @Html.ActionLink("CategoryName", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "CategoryName" })
         </th>
-        <th></th>
+        <th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UrlTitle)
-        </td>
-        <td>
-            <a target="_blank" href="@item.Url">@item.Url</a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UrlDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlTitle)
+            </td>
+            <td>
+                <a target="_blank" href="@item.Url">@item.Url</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
+            </td>
+        </tr>
+    }
 
 </table>
