@@ -6,7 +6,7 @@ SECTION 2
 	1. Create solution with all projects - OK
 
 SECTION 03 Implementing All The Layers
-	2. Create BOL with Entity Framework 
+	2. Create BOL with Entity Framework  - OK
 		* BOL (BusinessObjectLayer) = Handles object operations (repository)
 		* BLL (BusinessLogicLayer) = Handles business operations (validations)
 		* DAL (DataAccessLayer) = Handles communication between database(s)
@@ -15,17 +15,17 @@ SECTION 03 Implementing All The Layers
 		a. WebUI => BLL, BOL
 		b. BLL => BOL, DAL
 		c. DAL => BOL
-	3. Add Connection String to WebUI 
-	4. Create Areas in MVC 
+	3. Add Connection String to WebUI - OK
+	4. Create Areas in MVC - OK
 		a. Common
 		b. User
 		c. Admin
 		d. Security
-	5. Create All Controllers in Respective Areas 
-	6. Add Default Index View 
-	7. Add Bootstrap 
-	8. Create BrowseUrl View 
-	9. Create Common Layout 
+	5. Create All Controllers in Respective Areas - OK
+	6. Add Default Index View - OK
+	7. Add Bootstrap  - OK
+	8. Create BrowseUrl View - OK 
+	9. Create Common Layout - OK
 
 SECTION 04 Implementing User And Admin Module
 	10. Create DAL 
