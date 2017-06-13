@@ -14,7 +14,6 @@ namespace BOL
     
     public partial class tbl_User
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_User()
         {
             this.tbl_Url = new HashSet<tbl_Url>();
@@ -25,7 +24,6 @@ namespace BOL
         public string Password { get; set; }
         public string Role { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Url> tbl_Url { get; set; }
     }
 }
