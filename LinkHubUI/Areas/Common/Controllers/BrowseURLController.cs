@@ -1,4 +1,5 @@
 ﻿using BLL;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -12,7 +13,7 @@ namespace LinkHubUI.Areas.Common.Controllers
             objBs = new UrlBs();
         }
         // GET: Common/BrowseURL
-        public ActionResult Index(string sortOrder, string sortBy)
+        public ActionResult Index(string sortOrder, string sortBy, string page)
         {
             ViewBag.sortOrder = sortOrder;
             ViewBag.sortBy = sortBy;
@@ -72,9 +73,16 @@ namespace LinkHubUI.Areas.Common.Controllers
                     }
                     break;
                 default:
+                    urls = urls.OrderBy(x => x.UrlTitle).ToList();//ovo ce se dogoditi kad se stranica prvi put ucita
                     break;
             }
 
+            ViewBag.TotalPages = Math.Ceiling(objBs.GetAll().Where(x => x.IsApproved == "A").Count() / 10.0);//imat ces 10 rekorda po stranici
+
+            int pageNumber = int.Parse(page == null ? "1" : page);
+            ViewBag.Page = pageNumber;//ovo ti treba da znas ako mijenjas sortiranje dok si na npr 2. stranici
+
+            urls = urls.Skip((pageNumber - 1)*10).Take(10);
 
             return View(urls);
         }

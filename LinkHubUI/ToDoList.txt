@@ -34,7 +34,7 @@ SECTION 04 Implementing User And Admin Module
 		a. Add UrlBs 
 	12. Update BrowseUrl Controllers - OK
 	13. Update BrowseUrl View - OK
-	14. Sorting 
+	14. Sorting - OK
 	15. Paging 
 	16. ListCategory, ListUser with Sorting and Paging 
 

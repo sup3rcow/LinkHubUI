@@ -9,16 +9,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("UrlTitle", "Index", new { SortOrder = ViewBag.SortOrder==null?"Asc":(ViewBag.SortOrder=="Asc"?"Desc":"Asc"), SortBy = "Title"})
+            @Html.ActionLink("UrlTitle", "Index", new { SortOrder = ViewBag.SortOrder==null?"Asc":(ViewBag.SortOrder=="Asc"?"Desc":"Asc"), SortBy = "Title", Page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
-            @Html.ActionLink("Url", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "Url" })
+            @Html.ActionLink("Url", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "Url", Page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
-            @Html.ActionLink("UrlDesc", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "UrlDesc" })
+            @Html.ActionLink("UrlDesc", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "UrlDesc", Page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
-            @Html.ActionLink("CategoryName", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "CategoryName" })
+            @Html.ActionLink("CategoryName", "Index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "CategoryName", Page = (ViewBag.Page == null ? "1" : ViewBag.Page) })
         </th>
         <th>
     </tr>
@@ -42,3 +42,20 @@
     }
 
 </table>
+@{ 
+    double TotalPages = @ViewBag.TotalPages;
+}
+@for (int i = 1; i <= TotalPages; i++)
+{
+    if (i == ViewBag.Page)
+    {
+        <strong>
+            @Html.ActionLink(i.ToString() + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder), SortBy = (ViewBag.SortBy == null ? "Title" : ViewBag.SortBy), Page = i })
+        </strong>
+    }
+    else
+    {
+        @Html.ActionLink(i.ToString() + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder), SortBy = (ViewBag.SortBy == null ? "Title" : ViewBag.SortBy), Page = i })
+    }
+
+}
