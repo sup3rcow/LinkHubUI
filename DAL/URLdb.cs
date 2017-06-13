@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace DAL
 {
-    class URLdb
+    public class UrlDb
     {
         private LinkHubDbEntities db;
-        public URLdb()
+        public UrlDb()
         {
             db = new LinkHubDbEntities();
         }

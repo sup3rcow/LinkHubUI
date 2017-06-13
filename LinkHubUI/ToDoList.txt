@@ -30,10 +30,10 @@ SECTION 03 Implementing All The Layers
 SECTION 04 Implementing User And Admin Module
 	10. Create DAL - OK
 		a. Add UrlDb 
-	11. Create BLL 
+	11. Create BLL - OK
 		a. Add UrlBs 
-	12. Update BrowseUrl Controllers 
-	13. Update BrowseUrl View 
+	12. Update BrowseUrl Controllers - OK
+	13. Update BrowseUrl View - OK
 	14. Sorting 
 	15. Paging 
 	16. ListCategory, ListUser with Sorting and Paging 
